@@ -1,0 +1,227 @@
+
+/* General Styles */
+body {
+    font-family: 'Pirata One', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #0a2e52; /* Deep ocean blue */
+    background-image: url('../images/one-piece-ocean-bg.jpg'); /* Ocean background */
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Add this to your head section: <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet"> */
+
+/* Hero Section - Straw Hat Crew Style */
+.hero-section {
+    padding: 120px 0;
+    background: linear-gradient(rgba(10, 46, 82, 0.8), rgba(206, 17, 38, 0.6)), 
+                url('../images/one-piece-ship-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    border-bottom: 5px solid #ce1126; /* Straw Hat red */
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #f8d56b; /* Luffy's straw hat color */
+    -webkit-text-stroke: 2px #000;
+    font-family: 'Pirata One', cursive;
+    letter-spacing: 2px;
+}
+
+.hero-section .lead {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-style: italic;
+    color: #ffffff;
+}
+
+/* Navigation - Marine/Navy Style */
+.navbar {
+    background-color: #0a2e52 !important; /* Navy blue */
+    border-bottom: 3px solid #ce1126;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: all 0.3s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #f8d56b;
+    transform: scale(1.05);
+}
+
+.navbar-dark .navbar-brand {
+    color: #f8d56b;
+    font-weight: bold;
+    -webkit-text-stroke: 1px #000;
+    font-size: 2rem;
+    font-family: 'Pirata One', cursive;
+}
+
+/* Cards - Wanted Poster Style */
+.card {
+    border: 3px solid #543a24;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fffbe6;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    background-image: url('../images/parchment-texture.jpg');
+    background-size: cover;
+}
+
+.card:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.card-header {
+    font-weight: bold;
+    background-color: #ce1126 !important; /* Straw Hat red */
+    color: white;
+    border-bottom: 3px solid #000;
+    font-family: 'Pirata One', cursive;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* Flight Cards - Going Merry Style */
+.flight-card {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.flight-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/jolly-roger.png');
+    background-size: 100px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Forms - Log Pose Style */
+.form-control,
+.form-select {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 2px solid #543a24;
+    background-color: rgba(255, 250, 240, 0.9);
+    font-weight: bold;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #ce1126;
+    box-shadow: 0 0 10px rgba(206, 17, 38, 0.6);
+}
+
+/* Buttons - Devil Fruit Power Style */
+.btn {
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s;
+    border: 2px solid #000;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.btn-primary {
+    background-color: #ce1126; /* Straw Hat red */
+    border-color: #000;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #a50e20;
+}
+
+.btn-success {
+    background-color: #0a2e52; /* Navy blue */
+    border-color: #000;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #071f3a;
+}
+
+/* Footer - Grand Line Style */
+.footer {
+    background-color: #0a2e52;
+    color: #f0ffff;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 5px double #ce1126;
+    position: relative;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-image: url('../images/wave-pattern.png');
+    background-repeat: repeat-x;
+}
+
+/* Special One Piece Elements */
+.wanted-poster-effect {
+    border: 5px solid #000;
+    background: #fffbe6;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    transform: rotate(1deg);
+}
+
+.jolly-roger-icon {
+    width: 50px;
+    height: 50px;
+    background-image: url('../images/jolly-roger-small.png');
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1.5rem;
+    }
+    
+    .navbar-dark .navbar-brand {
+        font-size: 1.5rem;
+    }
+}

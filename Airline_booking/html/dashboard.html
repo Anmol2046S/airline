@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | SkyWings Airlines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="html/index.html">
+                <i class="fas fa-plane"></i> SkyWings Airlines
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="flights.html">Flights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="dashboard-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card shadow mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">User Profile</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <img src="images/user-avatar.jpg" alt="User" class="rounded-circle mb-3" width="100">
+                            <h5 id="userFullName"></h5>
+                            <p class="text-muted" id="userEmail"></p>
+                            <p><i class="fas fa-phone me-2"></i> <span id="userPhone"></span></p>
+                            <button class="btn btn-outline-primary w-100">Edit Profile</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card shadow mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Booking History</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Booking ID</th>
+                                            <th>Flight</th>
+                                            <th>Date</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="bookingHistoryTable">
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Fetch user data and booking history (This would be an AJAX call in a real application)
+            // For now, let's use dummy data
+            $('#userFullName').text('Anmol Shukla');
+            $('#userEmail').text('wanmolshukla@gmail.com');
+            $('#userPhone').text('123-456-7890');
+
+            // Dummy booking history
+            const bookings = [
+                { id: 'BK12345', flight: 'JFK → LHR', date: '2023-11-15', status: 'Confirmed' },
+                { id: 'BK12344', flight: 'LAX → JFK', date: '2023-10-10', status: 'Completed' }
+            ];
+
+            const bookingTable = $('#bookingHistoryTable');
+            bookings.forEach(booking => {
+                bookingTable.append(`
+                    <tr>
+                        <td>${booking.id}</td>
+                        <td>${booking.flight}</td>
+                        <td>${booking.date}</td>
+                        <td><span class="badge bg-success">${booking.status}</span></td>
+                        <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                    </tr>
+                `);
+            });
+        });
+    </script>
+</body>
+
+</html>
