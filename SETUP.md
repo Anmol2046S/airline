@@ -65,56 +65,13 @@ EXIT;
 1. Open `http://localhost/phpmyadmin`
 2. Select `airline_db`
 3. Click "Import" tab
-4. Upload `database.sql` (if available in repo)
+4. Upload `database.sql` (from repo)
 5. Click "Go"
 
 #### Option B: Using Command Line
 
 ```bash
 mysql -u root -p airline_db < database.sql
-```
-
-#### Option C: Manual Table Creation
-
-If `database.sql` is not available, run this SQL:
-
-```sql
--- Destinations Table
-CREATE TABLE destinations (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    flight_number VARCHAR(20) UNIQUE NOT NULL,
-    departure_city VARCHAR(100) NOT NULL,
-    arrival_city VARCHAR(100) NOT NULL,
-    departure_time DATETIME NOT NULL,
-    arrival_time DATETIME NOT NULL,
-    available_seats INT NOT NULL,
-    price DECIMAL(10, 2) NOT NULL,
-    airline_name VARCHAR(100),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Bookings Table
-CREATE TABLE bookings (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    passenger_name VARCHAR(100) NOT NULL,
-    passenger_email VARCHAR(100),
-    passenger_phone VARCHAR(20),
-    flight_id INT NOT NULL,
-    booking_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    status VARCHAR(50) DEFAULT 'confirmed',
-    seats_booked INT DEFAULT 1,
-    total_price DECIMAL(10, 2),
-    FOREIGN KEY (flight_id) REFERENCES destinations(id),
-    INDEX (flight_id),
-    INDEX (passenger_email)
-);
-
--- Sample Data
-INSERT INTO destinations (flight_number, departure_city, arrival_city, departure_time, arrival_time, available_seats, price, airline_name) VALUES
-('AI101', 'New York', 'Los Angeles', '2024-08-01 08:00:00', '2024-08-01 11:00:00', 150, 299.99, 'Air India'),
-('AI102', 'New York', 'Chicago', '2024-08-01 09:00:00', '2024-08-01 11:30:00', 120, 199.99, 'Air India'),
-('BA201', 'London', 'Paris', '2024-08-01 10:00:00', '2024-08-01 11:30:00', 180, 149.99, 'British Airways'),
-('UA301', 'Chicago', 'Miami', '2024-08-01 14:00:00', '2024-08-01 17:00:00', 100, 249.99, 'United Airlines');
 ```
 
 ### Step 5: Configure Database Connection
